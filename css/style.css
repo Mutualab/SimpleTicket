@@ -1,0 +1,137 @@
+body{
+	font-family: Arial, sans-serif;
+	font-size:12px;
+
+}
+
+#header{
+	margin-top:20px;
+	height:170px;
+}
+
+#header img{
+	margin-left: 296px;
+}
+
+#content{
+	margin-top:20px;
+}
+
+.hint{
+	font-size:9px;
+	font-style:italic;
+}
+
+
+.separateur{
+	height:2px;
+	background-image:url(img/sep.png);
+	background-repeat:repeat-x;
+	width:100%;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+h1 {
+	height:15px;
+	background-color:#004983;
+	font-family: Arial, sans-serif;
+	font-weight:bold;
+	font-size:14px;
+	color:#FFF;
+	margin-bottom:15px;
+	padding:5px;
+}
+
+h2 {
+	height:10px;
+	background-color:#f49e13;
+	font-family: Arial, sans-serif;
+	font-weight:bold;
+	font-size:12px;
+	color:#FFF;
+	margin-bottom:15px;
+	margin-top:15px;
+	padding:5px;
+}
+
+
+.label_form{
+	float: left;
+	font-weight:bold;
+	width:150px;
+}
+
+.label_value{
+	clear:left;	
+}
+
+#detail_adherent p{
+	margin-bottom:5px;
+}
+
+#detail_commande {
+
+}
+
+.pack_libelle{
+	color:#004983;
+	font-weight:bold;
+	font-size:16px;
+}
+
+.pack_libelle_non_valide{
+	text-decoration:line-through;
+	color:#666;
+	font-weight:bold;
+	font-size:16px;
+}
+
+
+.periode_libelle{
+	font-weight:bold;
+	font-size:11px;
+	font-style:italic;
+}
+
+.solde_libelle{
+	color: #f49e13;
+	font-weight:bold;
+	font-size:14px;
+}
+
+.debit{
+	padding-top:10px;
+}
+
+
+.historique{
+	padding-top:10px;
+	font-size:11px;
+	font-style:italic;
+}
+
+
+/* FORMULAIRE */
+
+.cssform p{
+clear: left;
+margin: 0;
+padding: 5px 0 8px 0;
+padding-left: 155px; /*width of left column containing the label elements*/
+border-top: 1px dashed gray;
+height: 1%;
+}
+
+.cssform label{
+font-weight: bold;
+float: left;
+margin-left: -155px; /*width of left column*/
+width: 150px; /*width of labels. Should be smaller than left column (155px) to create some right margin*/
+}
+
+.cssform input[type="text"]{ /*width of text boxes. IE6 does not understand this attribute*/
+width: 180px;
+}
+
+</style>
