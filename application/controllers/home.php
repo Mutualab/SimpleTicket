@@ -114,6 +114,20 @@ class Home extends CI_Controller {
 		redirect('home/profile/'.$user_id, 'refresh');
 	}
 	
+	function upd_end_date($user_id)
+	{
+		$this->load->model('user_model','user');
+		$this->user->UpdateEndDate($this->input->post('commande_id'),$this->input->post('end_date'));	
+		redirect('home/profile/'.$user_id, 'refresh');		
+	}
+	
+	function upd_start_date($user_id)
+	{
+		$this->load->model('user_model','user');
+		$this->user->UpdateStartDate($this->input->post('commande_id'),$this->input->post('start_date'));	
+		redirect('home/profile/'.$user_id, 'refresh');		
+	}
+	
 	function cancel_ticket($user_id,$ticket_log_id)
 	{
 		$this->db->where('id',$ticket_log_id);

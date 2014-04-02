@@ -282,15 +282,37 @@ $(function() {
 							?>
 								<?php echo $commande->pack_libelle; ?></span><br/>
                                 <span class="periode_libelle">Acheté le : <?php echo date_format(new DateTime($commande->date_achat), 'd-m-Y')?> | <?php echo $commande->periode_libelle; ?></span><br/><br/>
-								<span class="solde_libelle">Ticket(s) restant : <?php echo $commande->solde_ticket?></span><br/>
-								
+								<?php
+								if($commande->pack_id!=MENSUAL_TICKET)
+									echo '<span class="solde_libelle">Ticket(s) restant : '.$commande->solde_ticket.'</span><br/>';
+								?>
 								<p class="debit">
 								
-								 <?php 
-								$ticket_options=array();
+								<?php 
+								if($commande->pack_id==MENSUAL_TICKET)
+								{
+									echo form_open('home/upd_start_date/'.$user->id);	
+									echo form_hidden('commande_id',$commande->id);
+									echo '<p><span class="label_form">Date de début : </span></p>';
+									$start_date = date_format(new DateTime($commande->start_date), 'Y-m-d');
+									echo form_input(array('name'=>'start_date','id'=>'start_date','value' => $start_date,'size'=>'10'));
+									echo form_submit('submit', 'Valider');
+									echo form_close();
+									
+									echo form_open('home/upd_end_date/'.$user->id);	
+									echo form_hidden('commande_id',$commande->id);
+									echo '<p><span class="label_form">Mois de fin : </span></p>';
+									$end_date = date_format(new DateTime($commande->end_date), 'Y-m');
+									echo form_input(array('name'=>'end_date','id'=>'end_date','value' => $end_date,'size'=>'10'));
+									echo form_submit('submit', 'Valider');
+									echo form_close();
+								}
+								else
+								{
+									$ticket_options=array();
 									for ($i=0.5;$i<=10;$i=$i+0.5){
 										$ticket_options[(string)$i]=$i;
-                  }
+									}
 	
 									echo form_open('home/debit/'.$user->id);	
 									echo form_hidden('commande_id',$commande->id);
@@ -298,7 +320,7 @@ $(function() {
 									echo form_dropdown('nb_ticket', $ticket_options);
 									echo form_submit('submit', 'Valider');
 									echo form_close();
-	
+								}
 								?>        	
 								</p>
 								
