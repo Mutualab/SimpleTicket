@@ -34,7 +34,6 @@ class Stats_model extends CI_Model{
 	
 	function InsertQuery($label,$query,$columns,$description)
 	{
-
 		$data = array(
                 'label' => $label,
                 'query' => $query ,

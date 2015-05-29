@@ -1,0 +1,260 @@
+html,body {
+	height: 100%;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+hr {
+    height: 1px;
+background-color: #CCC;
+width: 80%;
+margin: 1rem auto;
+}
+.wrapper {
+	height: 100%;
+	position: relative;
+}
+
+.nav {
+	position: absolute;
+	width: 450px;
+	border-left : 1px #666 solid;
+	text-align: center;
+    z-index: 9999;
+    background: #232323;
+    height: 100%;
+    color : white;
+    box-shadow: 2px 0px 5px #232323; 
+}
+
+.nav .image {
+    overflow: hidden;
+    width: 100%;
+}
+
+.nav .image img{
+    max-width: 100%;
+
+}
+
+.avatar {
+    margin : 2rem auto;
+    border-radius: 50%;
+    background-color : #CCC;
+    width: 140px;height: 140px;
+}
+
+.quit a {
+    text-transform: uppercase;
+    color: #CCC;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-decoration: none;
+    display: block;
+}
+
+.nav h1 {
+
+	font-weight: 300;
+	font-size: 3rem;
+	margin-top: 10%;
+
+}
+
+.nav h2 {
+
+	font-weight: 300;
+	font-size: 2rem;
+}
+.content{
+	box-sizing : border-box;
+
+	height: 100%;
+	padding-left : 450px;
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+}
+
+.content .users .alphabet {
+	position : absolute;
+	height: 100%;
+	background-color: #666;
+	width : 30px;
+}
+
+.alphabet ul {
+	list-style: none;
+}
+
+.alphabet ul li {
+	height: 30px;
+	width: 30px;
+	text-transform: uppercase;
+	text-align: center;
+	color: white;
+	border-bottom: 1px white solid;
+	line-height: 30px;
+	font-size: 1rem;
+	font-weight: 400;
+}
+
+
+.content .users-list {
+	margin-left: 30px;
+	height: 500px;
+}
+
+.content .users-list ul {
+	list-style: none;
+}
+
+.content .users-list ul li {
+	border-bottom: 1px solid #ccc;
+}
+
+.content .users-list ul li a {
+	text-decoration: none;
+	color: black;
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 1rem;
+	box-sizing: border-box;
+}
+
+.pack-list {
+    margin-top: 3rem;
+}
+
+.pack-list > h1 {
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform:    uppercase;
+    text-align: left;
+    padding:    1rem; 
+}
+
+.pack-list ul li {
+    text-align: right;
+    border-top : 1px solid #2e2e2e;
+}
+
+.pack-list ul li:last-child {
+    border-bottom : 1px solid #2e2e2e;
+}
+
+.pack-list ul li.selected {
+    background-color : #312e38;
+}
+
+.pack-list ul li:hover {
+    background-color : #312e38;
+}
+
+
+.pack-list ul li a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding : 1rem ;
+    display: block;
+}
+
+.pack-list ul li a span {
+    display: block;
+    font-size: 0.7rem;
+    color : #a7a7a7;
+}
+
+.use-ticket {
+    width : 250px;
+    margin : 1rem auto;
+}
+
+.use-ticket ul {
+    list-style: none;
+}
+
+.use-ticket ul li {
+    float: left;
+}
+
+.use-ticket li.stepper {
+    width: 110px;
+}
+
+.use-ticket li.plus,.use-ticket li.minus,.use-ticket li.stepper input {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 3rem;
+    font-weight: 200;
+    width: 70px; height: 70px;
+    text-align: center;
+    line-height: 70px;
+}
+
+.use-ticket li.plus,.use-ticket li.minus {
+    cursor: pointer;
+    background: #dba571;
+
+}
+
+.use-ticket li.stepper input {
+    border: none;
+    width: 100%;
+}
+
+.use-ticket input[type="submit"] {
+    border: none;
+    /*background: #1f7f5c;*/
+    color: white;
+    width: 100%;
+    padding: 0.8rem;
+    margin: 1rem 0;
+    font-size : 1.2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.order-history {
+	position: absolute;
+	bottom : 0;
+	width: 100%;
+    background-color: white;
+    max-height: 350px;
+}
+
+.order-history h1 {
+	width: 100%;
+	background-color: #28545b;
+	color : white;
+	height: 25px;
+	padding : 0.6rem 1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.order-history ul {
+    max-height: 325px;
+}
+
+.order-history ul li {
+    padding: 0.8rem;
+    border-bottom: 1px solid #CCC;
+    font-size: 0.8rem;
+}
+
+.order-history ul li span {
+    padding: 0 3rem;
+}
+
+#pie {
+    height: 250px;
+    width: 300px;
+    margin :  0 auto;
+}
+
+.canvasjs-chart-credit {
+    display:    none;
+}
