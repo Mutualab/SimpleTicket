@@ -17,7 +17,15 @@
   
 	<div class="nav">
 		<!-- <div class="image"><img src="<?php echo base_url(); ?>images/work.jpg"></div> -->
-		<h1>bienvenu(e)</h1>
+		<h1>bienvenu(e) à </h1>
+		<h1></h1>
+		<div class="daily">
+			<ul>
+			<?php foreach ($daily_stats as $log) {
+				echo "<li>".$log->first_name." ".$log->last_name." <i>(".$log->nb_ticket.")</i></li>";
+			} ?>
+			</ul>
+		</div>
 	</div>
 	<div class="content">
 		

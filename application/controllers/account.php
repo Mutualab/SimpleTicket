@@ -6,6 +6,28 @@ class Account extends CI_Controller {
 	{
 		$this->load->model('user_model','user');
 		$data['users']=$this->user->getAll();
+
+		$daily_stats = array();
+
+		$logs = $this->user->get_today_log();
+		foreach ($logs as $log) {
+			$user_id = $this->user->getUserByCommande($log->commande_id);
+			$usr_data = array_shift($user_id) ;
+			if($usr_data) {
+				$usr = $this->user->getDetail($usr_data->user_id);
+				$usr_stats = new stdClass();
+				$usr_stats->first_name = $usr->first_name;
+				$usr_stats->last_name = $usr->last_name;
+				$usr_stats->nb_ticket = $log->nb_ticket;
+
+				array_push($daily_stats, $usr_stats);
+			}
+			
+
+		}
+			
+		$data['daily_stats'] = $daily_stats;
+
 		$this->load->view('account_view',$data);
 	}
 
