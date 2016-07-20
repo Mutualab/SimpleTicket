@@ -58,7 +58,7 @@ class Account extends CI_Controller {
 		$this->load->model('pack_model','pack');
 
 		$data['user']=$this->user->getDetail($user_id);
-	    $data['commandes']=$this->user->getCommandes($user_id);
+                $data['commandes']=$this->user->getCommandes($user_id);
 
 		$this->user->useTicket($order_id,$this->input->post('use-ticket-value'));		
 		redirect('account/status/'.$user_id.'/'.$order_id, 'refresh');
