@@ -16,7 +16,8 @@ margin: 1rem auto;
 }
 
 .nav {
-	position: absolute;
+	/*position: absolute;*/
+    position:fixed;
 	width: 450px;
 	border-left : 1px #666 solid;
 	text-align: center;
@@ -73,7 +74,7 @@ margin: 1rem auto;
 	height: 100%;
 	padding-left : 450px;
 	position: absolute;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	width: 100%;
 }
 
@@ -102,7 +103,7 @@ margin: 1rem auto;
 
 
 .content .users-list {
-	margin-left: 30px;
+	/*margin-left: 30px;*/
 	height: 500px;
 }
 
@@ -112,6 +113,17 @@ margin: 1rem auto;
 
 .content .users-list ul li {
 	border-bottom: 1px solid #ccc;
+        -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+
+   /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
+background-color:#fff;
 }
 
 .content .users-list ul li a {
@@ -122,6 +134,16 @@ margin: 1rem auto;
 	height: 100%;
 	padding: 1rem;
 	box-sizing: border-box;
+-moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+
+   /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
 }
 
 .pack-list {

@@ -9,14 +9,13 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/account.css" media="screen" />
     <script src="<?php echo base_url(); ?>js/jquery.min.js"></script>
-    <script src="<?php echo base_url(); ?>js/nicescroll.min.js"></script>
+    <!--<script src="<?php echo base_url(); ?>js/nicescroll.min.js"></script>-->
 </head>
 <body>
 
 <div class="wrapper">
   
 	<div class="nav">
-		<!-- <div class="image"><img src="<?php echo base_url(); ?>images/work.jpg"></div> -->
 		<h1>bienvenu(e) à </h1>
 		<h1></h1>
 		<div class="daily">
@@ -28,9 +27,8 @@
 		</div>
 	</div>
 	<div class="content">
-		
+                <div class="search-form" style="overflow:hidden;width:100%;"><input id="searchForm" placeholder="Rechercher son nom…" style="width:100%;height:30px;padding:0.1em 0.5em;"/></div>
 		<div class="users">
-
 			<div class="users-list">
 				<ul>
 				<?php 
@@ -44,7 +42,7 @@
 						$gravatar_hash =  md5( strtolower( trim($user->email ) ) );
 						$gravatar = '<img src="http://www.gravatar.com/avatar/'.$gravatar_hash.'?s=40">';
 					?>
-					<li><a href="<?php echo site_url('/account/status/'.$user->id); ?>"><?php echo $gravatar; ?> <?php echo $user->last_name . ' ' .$user->first_name; ?></a></li>
+					<li class="<?php echo strtolower($user->last_name.' '.$user->first_name) ?>"><a href="<?php echo site_url('/account/status/'.$user->id); ?>"><?php echo $gravatar; ?> <?php echo $user->last_name . ' ' .$user->first_name; ?></a></li>
 				<?php endforeach; ?>
 				</ul>
 			</div>
@@ -68,12 +66,21 @@
 <script>
   $(document).ready(
     function() {  
-    	$(".users-list").css('height',$(window).height());	
-    	$(".users-list").niceScroll();
-    	$(window).on('resize',function(){
-    		$(".users-list").css('height',$(window).height());	
-    	})
-    	
+    	//$(".users-list").css('height',$(window).height());	
+    	//$(".users-list").niceScroll();
+    	//$(window).on('resize',function(){
+    	//	$(".users-list").css('height',$(window).height());	
+    	//})
+        $('#searchForm').keyup(function(){
+            var search = $(this).val().toLowerCase();
+            if(search.length < 3 )$('.users-list ul li').show()
+            else {
+            $(".users-list ul li").hide();
+            $('li[class*="'+search+'"').show();
+            }
+            });
+        $('#searchForm').val('');
+        $('.users-list ul li').show();
     }
   );
 </script>

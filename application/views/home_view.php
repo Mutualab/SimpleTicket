@@ -357,7 +357,7 @@ $(function() {
 			 <!-- Formulaire de création d'un nouvel adhérent -->
         
             <div id="create_form" >
-                <h1>Créer un nouvel adhérent!</h1>
+                <h1>Créer un nouvel adhérent</h1>
                 
                 <?php echo form_open("home/new_user",array('class'=>'cssform')); ?>
                 
