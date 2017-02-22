@@ -1,13 +1,11 @@
-/application/config/development
-/application/logs/log-*.php
-/application/logs/!index.html
-/application/cache/*
-/application/cache/!index.html
-/images/photoweb/*
+/application/cache/
+!/application/cache/index.html
+/application/logs/
+!/application/logs/index.html
+/images/photoweb/
 !/images/photoweb/.keep
-.htaccess
-.htaccess-dev
-.htaccess-preprod
-.htaccess-prod
-.htpassword
+/.htaccess
+/.htaccess-dev
+/.htaccess-prod
+/.htpassword
 
