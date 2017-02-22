@@ -1,8 +1,12 @@
-/application/cache/
+/application/cache/*
 !/application/cache/index.html
-/application/logs/
+/application/config/development/*
+!/application/config/development/.keep
+/application/config/production/*
+!/application/config/production/.keep
+/application/logs/*
 !/application/logs/index.html
-/images/photoweb/
+/images/photoweb/*
 !/images/photoweb/.keep
 /.htaccess
 /.htaccess-dev
