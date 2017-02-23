@@ -1,6 +1,6 @@
 <?php
 
-$user_options = array(0  => ' ');
+$user_options = array(0  => '');
 		
 if (count($users) >0){
 	foreach($users as $row){
