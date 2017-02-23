@@ -60,6 +60,7 @@ padding: 0;
 .custom-combobox-input {
 margin: 0;
 padding: 0.3em;
+background: #fff;
 }
 </style>
 <script>
