@@ -1,0 +1,21 @@
+AuthName "Page d'administration protégée"
+AuthType Basic
+AuthUserFile "/home/user/Mutualab/SimpleTicket/.htpassword"
+Require valid-user
+
+<Files ".htaccess" >
+Order deny,allow
+Deny from all
+</Files>
+
+<Files ".htpassword" >
+Order deny,allow
+Deny from all
+</Files>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond $1 !^(index\.php|images|table-images|js|robots\.txt|css|captcha)
+RewriteRule ^(.*)$ /index-dev.php/$1 [L]
+</IfModule>
+
